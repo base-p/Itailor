@@ -63,6 +63,6 @@ class AppController extends Controller {
         $this->Cookie->key = 'qSI232qs*&sXOw!obum@34SAv!@*(XSL#$%)asGb$@11~_+!@#HKis~#^';
 //       $this->Cookie->httpOnly = true;
        $this->Cookie->type('aes');
-        $this->Auth->allow('index');
+        $this->Auth->allow();
     }
 }
