@@ -1,8 +1,8 @@
 <?php
-App::uses('AppModel', 'Model');
-class admin extends Model 
+
+class Users extends Model 
     {
-        public $validate = array(
+		public $validate = array(
             'firstname' => array(
             'required' => array(
             'rule' => 'notBlank',
@@ -29,6 +29,4 @@ class admin extends Model
             ),
         );
     }
-
-
-
+?>

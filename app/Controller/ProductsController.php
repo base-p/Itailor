@@ -2,7 +2,7 @@
 
 App::uses('Controller', 'Controller');
 
-class productsController extends AppController {
+class ProductsController extends AppController {
     public $helpers = array('Html', 'Form');
     
     public function index(){

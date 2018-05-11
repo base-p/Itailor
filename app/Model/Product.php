@@ -1,6 +1,6 @@
 <?php
 
-class product extends Model 
+class Product extends Model 
     {
 
     }
