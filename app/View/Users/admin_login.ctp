@@ -1,8 +1,8 @@
 <div>
     <div class="col s12 text-center">
             <span class="flow-text">
-                <div class="col s12 text-center"><span class="flow-text"><h1 class="center-align">SHOP CHECKOUT</h1></span></div>
-                <h5 class="center-align">Click on login if you have account or Register to create account with E-Tailor </h5>
+                <div class="col s12 text-center"><span class="flow-text"><h1 class="center-align">ADMIN LOGIN</h1></span></div>
+                <h5 class="center-align">This page is reserved for iTailor registered staff only. </h5>
             </span>
     </div>
 </div>
@@ -11,7 +11,7 @@
     <div class="row">
     <div class="col s12 l6">
           <div class="card-panel">
-            <p>I AM A RETURNING CUSTOMER</p>
+            <p>I AM A REGISTERED STAFF IN ITAILOR</p>
                <div class="row">
                 <form class="col s12">
                   <div class="row">
