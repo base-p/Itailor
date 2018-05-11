@@ -109,3 +109,15 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+if($_SERVER['HTTP_HOST']=='localhost'){
+            define('SITEPATH','http://localhost/itailor/');
+           
+        
+} else {
+       $protocol = 'http://';
+            $domainName = $_SERVER['HTTP_HOST'].'/';
+            define('SITEPATH',$protocol.$domainName);
+}
+
+define('G_PWD','diaz12345$');

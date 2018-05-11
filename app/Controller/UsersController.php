@@ -2,7 +2,12 @@
 
 App::uses('Controller', 'Controller');
 
+<<<<<<< HEAD:app/Controller/UsersController.php
 class UsersController extends AppController {
+=======
+class AdminController extends AppController {
+    ublic $uses = array();
+>>>>>>> Obum001:app/Controller/AdminController.php
     public $helpers = array('Html', 'Form');
     
     public function index() {

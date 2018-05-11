@@ -31,9 +31,38 @@ App::uses('Controller', 'Controller');
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-    public $components = array('DebugKit.Toolbar');
+   public $components = array('DebugKit.Toolbar','Cookie','Session','Flash',
+        'Auth' => array(
+            'loginRedirect' => array(
+                'controller' => 'users',
+                'action' => 'dashboard'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'users',
+                'action' => 'login'
+            ),
+            'loginAction' => array(
+                'controller' => 'users',
+                'action' => 'login',
+            ),
+            'authenticate' => array(
+                'Form' => array(
+                    'passwordHasher' => 'Blowfish',
+                    'fields'=>['username'=>'username',
+                    'password'=>'password']
+                )
+            ),
+        )
+    );
+  
     
-   
+    public function beforeFilter() {
+        parent::beforeFilter();  
+       $this->Cookie->name = 'itailor';
+       $this->Cookie->time = 3600; // or '1 hour'
+        $this->Cookie->key = 'qSI232qs*&sXOw!obum@34SAv!@*(XSL#$%)asGb$@11~_+!@#HKis~#^';
+//       $this->Cookie->httpOnly = true;
+       $this->Cookie->type('aes');
+        $this->Auth->allow('index');
+    }
 }
-
-
