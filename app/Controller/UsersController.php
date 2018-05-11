@@ -2,12 +2,11 @@
 
 App::uses('Controller', 'Controller');
 
-<<<<<<< HEAD:app/Controller/UsersController.php
+
 class UsersController extends AppController {
-=======
-class AdminController extends AppController {
-    ublic $uses = array();
->>>>>>> Obum001:app/Controller/AdminController.php
+
+    public $uses = array();
+
     public $helpers = array('Html', 'Form');
     
     public function index() {
@@ -15,6 +14,16 @@ class AdminController extends AppController {
     }
     
     public function login() {
+        $this->layout = 'default3';
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+              return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Flash->error(__('Invalid username or password, try again'));
+        }
+    }
+    
+    public function admin_login() {
         $this->layout = 'default3';
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
