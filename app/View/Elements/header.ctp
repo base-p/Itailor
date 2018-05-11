@@ -11,8 +11,18 @@
             <li><?php echo $this->Html->link('SHOP','#',['class'=>'dropdown-button','data-target'=>'dropdown1','coverTrigger'=>'false']);?></li>
             <li><?php echo $this->Html->link('MY ACCOUNT','#',['class'=>'dropdown-button','data-target'=>'dropdown2','coverTrigger'=>'false']);?></li>
             <li><?php echo $this->Html->link('CONTACT','/contents/index');?></li>
-            <li><?php echo $this->Html->link('ABOUT US','/contents/index');?></li>
+            <li><?php echo $this->Html->link('ABOUT US','/contents/index');?></li> 
+    
+                        <li><form>
+                            <div class="input-field col s6 s12 white-text">
+                                <i class="white-text small material-icons prefix">search</i>
+                                <input type="text" placeholder="search" id="autocomplete-input" class="white-text">
+                            </div>
+                            </form>
+                        </li>
+             
           </ul>
+            
         </div>
     </nav>
 </div>
