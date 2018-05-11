@@ -30,7 +30,6 @@
       
      <!--Import materialize.css-->
      <?php echo $this->Html->css("materialize.min.css"); ?> 
-     <?php echo $this->Html->css("materialize.css"); ?>
      
     </head>
 

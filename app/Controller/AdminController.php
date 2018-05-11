@@ -3,7 +3,7 @@
 App::uses('AppController', 'Controller');
 
 class AdminController extends AppController {
-    
+    ublic $uses = array();
     public $helpers = array('Html', 'Form');
     public function addproducts() {
     $this->layout = 'admin';
