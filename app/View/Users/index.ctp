@@ -6,8 +6,11 @@
             </span>
     </div>
 </div>
-
-
+<div class="row">
+    <div class="col s12 text-center">
+        <?php echo $this->Session->flash(); ?>
+    </div>
+</div>
 <div class="row">
      <div class="col s12">
     <div class="row">

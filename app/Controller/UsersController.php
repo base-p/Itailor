@@ -9,11 +9,35 @@ class UsersController extends AppController {
     public $helpers = array('Html', 'Form');
     
     public function index() {
+    
+    }
+    
+    public function login() {
+        $this->autoRender = false;
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
               return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Invalid username or password, try again'));
+        }
+    }
+    
+    public function register() {
+        $this->autoRender = false;
+        if ($this->request->is('post')) {
+            $user_array = [];
+            $user_array['User'] = [];
+            $user_array['User']['username'] = $this->request->data['email_register'];
+            $user_array['User']['password'] = $this->request->data['password_register'];
+            
+            $this->User->create();
+            if ($this->User->save($user_array['User'])) {
+                    //$email=$this->request->data['User']['username'];
+                    //$ref_id=$this->request->data['User']['ref_id'];
+                $this->Session->setFlash("Registration Successful. Proceed to Login",'myflash',['params'=>['class' => 'flashsuccess message']]);
+                 return $this->redirect(array('controller'=>'users','action' => 'index'));
+            }
+            $this->Session->setFlash("Something went wrong!",'myflash',['params'=>['class' => 'flashsuccess message']]);
         }
     }
     
