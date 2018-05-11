@@ -22,13 +22,13 @@
                 
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="email-login" type="email" class="validate" name="email_login">
+                      <input id="email-login" type="email" class="validate" name="data[User][username]">
                       <label for="email-login">Email</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="password-login" type="password" class="validate" name="password_login">
+                      <input id="password-login" type="password" class="validate" name="data[User][password]">
                       <label for="password-login">Password</label>
                     </div>
                   </div>

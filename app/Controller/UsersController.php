@@ -16,9 +16,10 @@ class UsersController extends AppController {
         $this->autoRender = false;
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-              return $this->redirect($this->Auth->redirectUrl());
+               return $this->redirect(array('controller'=>'products','action' => 'index'));
             }
-            $this->Flash->error(__('Invalid username or password, try again'));
+            $this->Session->setFlash("Invalid Username and/or Password!",'myflash',['params'=>['class' => 'flasherror message']]);
+             return $this->redirect(array('controller'=>'users','action' => 'index'));
         }
     }
     
@@ -37,7 +38,8 @@ class UsersController extends AppController {
                 $this->Session->setFlash("Registration Successful. Proceed to Login",'myflash',['params'=>['class' => 'flashsuccess message']]);
                  return $this->redirect(array('controller'=>'users','action' => 'index'));
             }
-            $this->Session->setFlash("Something went wrong!",'myflash',['params'=>['class' => 'flashsuccess message']]);
+            $this->Session->setFlash("Something went wrong!",'myflash',['params'=>['class' => 'flasherror message']]);
+             return $this->redirect(array('controller'=>'users','action' => 'index'));
         }
     }
     

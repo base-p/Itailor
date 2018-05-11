@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2018 at 11:18 AM
--- Server version: 5.7.11
--- PHP Version: 5.6.19
+-- Generation Time: May 11, 2018 at 04:59 PM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecomphp`
+-- Database: `itailor`
 --
 
 -- --------------------------------------------------------
@@ -216,21 +218,26 @@ INSERT INTO `reviews` (`id`, `pid`, `uid`, `review`, `timestamp`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `user_class` int(11) NOT NULL DEFAULT '1',
+  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `timestamp`) VALUES
-(1, 'vivek@codingcyber.com', '26e0eca228b42a520565415246513c0d', '2017-10-27 12:05:10'),
-(2, 'vivek1@codingcyber.com', '$2y$10$cMzHNUFGKma96MywHmVMbekuJZb1tSNLsevHzLnSRbcRicQVhEC6a', '2017-10-27 12:24:25'),
-(6, 'vivek2@codingcyber.com', '$2y$10$apI7l.1wAS5pgbG4YfMrN.jNd5T3XmhecFuSV2M6UNdoUHImPXNxm', '2017-10-27 12:28:20'),
-(7, 'finegodyson2014@gmail.com', '$2y$10$ul3SRlBdxDXmWpS7tzQ7/u54Mp1Xx/qJhcENiefJfTbNzkHfYHtGK', '2018-05-01 21:24:17'),
-(8, 'adannem@yahoo.com', '$2y$10$qaW7GLppStqvT4mLb.TsKeU.SCf4oNJYEhRzL5k7J6OPf7i8QyRW6', '2018-05-04 11:32:46');
+INSERT INTO `users` (`id`, `username`, `password`, `user_class`, `created`, `modified`) VALUES
+(1, 'vivek@codingcyber.com', '26e0eca228b42a520565415246513c0d', 1, '2017-10-27 12:05:10', NULL),
+(2, 'vivek1@codingcyber.com', '$2y$10$cMzHNUFGKma96MywHmVMbekuJZb1tSNLsevHzLnSRbcRicQVhEC6a', 1, '2017-10-27 12:24:25', NULL),
+(6, 'vivek2@codingcyber.com', '$2y$10$apI7l.1wAS5pgbG4YfMrN.jNd5T3XmhecFuSV2M6UNdoUHImPXNxm', 1, '2017-10-27 12:28:20', NULL),
+(7, 'finegodyson2014@gmail.com', '$2y$10$ul3SRlBdxDXmWpS7tzQ7/u54Mp1Xx/qJhcENiefJfTbNzkHfYHtGK', 1, '2018-05-01 21:24:17', NULL),
+(8, 'adannem@yahoo.com', '$2y$10$qaW7GLppStqvT4mLb.TsKeU.SCf4oNJYEhRzL5k7J6OPf7i8QyRW6', 1, '2018-05-04 11:32:46', NULL),
+(10, 'ookok@gmail.com', '$2a$10$ugxcVk2NZqLXq.vwD/0LJuaDNYlzR229nNPfe7hrsOIRX5W.Xuo4W', 1, '2018-05-11 16:44:24', '2018-05-11 15:44:24'),
+(11, 'wsfsdf@hjm', '$2a$10$SIrCy/XfwTeSd0FDPZ4Pu.WaT1KKfTZmVzS4C2BovQK6EBy9sDtKy', 1, '2018-05-11 16:47:04', '2018-05-11 15:47:04'),
+(12, 'okorieobumneke@gmail.com', '$2a$10$eeZj/pJ/uMe5.7gpjPaXYuK88obwQ5hXDmKIbtQVM1VM9LxJTrOVa', 1, '2018-05-11 16:58:29', '2018-05-11 15:58:29');
 
 -- --------------------------------------------------------
 
@@ -336,7 +343,7 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`username`);
 
 --
 -- Indexes for table `usersmeta`
@@ -359,51 +366,62 @@ ALTER TABLE `wishlist`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `orderitems`
 --
 ALTER TABLE `orderitems`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT for table `ordertracking`
 --
 ALTER TABLE `ordertracking`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `usersmeta`
 --
 ALTER TABLE `usersmeta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
