@@ -12,7 +12,7 @@
      <div class="col s12">
     <div class="row">
     <div class="col s12 l6">
-          <div class="card-panel">
+          <div class="card-panel hoverable">
             <p>I AM A RETURNING CUSTOMER</p>
                <div class="row">
                 <?php echo $this->Form->create('User', array('url'=>['controller'=>'users','action'=>'login'],'class' => 'col s12','id' => '')); ?>
@@ -41,7 +41,7 @@
           </div>
     </div>
     <div class="col s12 l6">
-          <div class="card-panel">
+          <div class="card-panel hoverable">
             <p>CREATE NEW ACCOUNT</p>
                <div class="row">
                 <?php echo $this->Form->create('User', array('url'=>['controller'=>'users','action'=>'register'],'class' => 'col s12','id' => '')); ?>
@@ -70,7 +70,7 @@
                     </button>
                 </div>
               </div> 
-              <?php echo $this->form->end(); ?>
+        <?php echo $this->form->end(); ?>
     </div>
     </div>
     </div>

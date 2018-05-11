@@ -6,11 +6,12 @@
             </span>
     </div>
 </div>
+<br><br>
 <div class="row">
-     <div class="col s12">
+     <div class="col s12 offset-s3">
     <div class="row">
     <div class="col s12 l6">
-          <div class="card-panel">
+          <div class="card-panel hoverable">
             <p>I AM A REGISTERED STAFF IN ITAILOR</p>
                <div class="row">
                 <form class="col s12">
@@ -39,6 +40,8 @@
     </div>
     </div>
 </div>
+    </div>
+
 
 
 
