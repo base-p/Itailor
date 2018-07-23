@@ -2,7 +2,7 @@
     <div class="col s12 text-center">
             <span class="flow-text">
                 <div class="col s12 text-center"><span class="flow-text"><h1 class="center-align">SHOP ACCOUNT</h1></span></div>
-                <h5 class="center-align">Click on login if you have account or Register to create account with E-Tailor </h5>
+                <h5 class="center-align">Click on login if you have account or Register to create a new account </h5>
             </span>
     </div>
 </div>

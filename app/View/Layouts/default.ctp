@@ -39,7 +39,7 @@
     <div class="grid">
         <div class="row">
             <!--header-->
-            <div class="col s12"><?php echo $this->element('header'); ?></div>    
+            <?php echo $this->element('header'); ?>   
         </div> 
        
         <div class="row text-center"> 
@@ -63,14 +63,7 @@
             $('.sidenav').sidenav();
             $('.dropdown-button').dropdown();
             $('select').formSelect(); 
-            $('input.autocomplete').autocomplete({
-            data: myData,
-            limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-            onAutocomplete: function(val) {
-              // Callback function when value is autcompleted.
-            },
-            minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
-            });  
+            
             });
         </script>
     </body>

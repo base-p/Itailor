@@ -1,29 +1,28 @@
 <!-- Navigation -->
-<div class="navbar-fixeid">
+<div class="col s12">
     <br><br>
     <nav>
         <div class="nav-wrapper red">
-          <a href="#!" class="brand-logo right">Logo</a>
+          
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-moblie" class="left hide-on-med-and-down">
             <li><?php echo $this->Html->link('HOME','/Products/index');?></li> 
             <!-- Dropdown Trigger -->
             <li><?php echo $this->Html->link('SHOP','#',['class'=>'dropdown-button','data-target'=>'dropdown1','coverTrigger'=>'false']);?></li>
-            <li><?php echo $this->Html->link('MY ACCOUNT','#',['class'=>'dropdown-button','data-target'=>'dropdown2','coverTrigger'=>'false']);?></li>
+            <li><?php echo $this->Html->link('MY ACCOUNT','#',['class'=>'dropdown-button','data-target'=>'dropdown2','data-beloworigin'=>'true']);?></li>
             <li><?php echo $this->Html->link('CONTACT','/contents/index');?></li>
-            <li><?php echo $this->Html->link('ABOUT US','/contents/index');?></li> 
-    
-                        <li><form>
-                            <div class="input-field col s6 s12 white-text">
-                                <i class="white-text small material-icons prefix">search</i>
-                                <input type="text" placeholder="search" id="autocomplete-input" class="white-text">
-                            </div>
-                            </form>
-                        </li>
-             
+            <li><?php echo $this->Html->link('ABOUT US','/contents/index');?></li>  
           </ul>
+         
             
+            <ul> 
+              <li><a href="#!" class="brand-logo right">Logo</a></li>
+          </ul>
+         
         </div>
+        
+        
+        
     </nav>
 </div>
 

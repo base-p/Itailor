@@ -6,19 +6,20 @@ class ProductsController extends AppController {
     public $helpers = array('Html', 'Form');
     
     public function index(){
-            $this->layout = 'users';
-            $this->set('posts', $this->product->find('all'));
+            $this->layout = 'default3';
+            
             }
+    
     
     public function addproducts(){
             $this->layout = 'admin';
-            $this->set('posts', $this->product->find('all'));
+            $this->set('posts', $this->products->find('all'));
             }
     
     public function add(){
             $this->layout = 'default2';
             $products = $this->Products->newEntity();
-                if ($this->request->is('post')) {
+                if ($this->request->is('posts')) {
                     $products = $this->Products->patchEntity($products, $this->request->getData());
                         if ($this->Products->save($products)) {
                             $this->Flash->success(__('Your Post has been saved.'));
